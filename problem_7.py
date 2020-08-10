@@ -112,3 +112,12 @@ router3.add_handler("/home/", "home is where the heart is")
 print(router3.lookup("/home")) #should return home is where the heart is
 print(router3.lookup("/")) #should return root handler`
 print(router3.lookup("/home/lungs/")) #should return None
+
+#Edge Case 1: Only root handler
+router4 = Router("root handler")
+print(router4.lookup("/home")) #should return None
+
+#Edge Case 2: Trailing slash
+router5 = Router("root handler")
+router5.add_handler("/home/", "First handler")
+print(router5.lookup("/home")) #should return First handler

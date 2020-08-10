@@ -110,8 +110,6 @@ for word in wordList:
 
 
 # In[37]:
-
-
 from ipywidgets import widgets
 from IPython.display import display
 from ipywidgets import interact
@@ -125,3 +123,45 @@ def f(prefix):
     else:
         print('')
 interact(f,prefix='');
+
+#Edge Case: words with spaces and hyphens
+MyTrie2 = Trie()
+wordList = ["hullabaloo", "hunter-gatherer", "Hagia Sophia", "Aardvark", "aviation", "head ache", "hat"]
+for word in wordList:
+    MyTrie2.insert(word)
+
+# In[37]:
+from ipywidgets import widgets
+from IPython.display import display
+from ipywidgets import interact
+def f(prefix):
+    if prefix != '':
+        prefixNode = MyTrie2.find(prefix)
+        if prefixNode:
+            print('\n'.join(prefixNode.suffixes()))
+        else:
+            print(prefix + " not found")
+    else:
+        print('')
+interact(f,prefix='h');
+
+#Edge Case: words with null characters and symbols
+MyTrie3 = Trie()
+wordList = ['', '@#', "@!@ab", "@%#4t"]
+for word in wordList:
+    MyTrie3.insert(word)
+
+# In[37]:
+from ipywidgets import widgets
+from IPython.display import display
+from ipywidgets import interact
+def f(prefix):
+    if prefix != '':
+        prefixNode = MyTrie3.find(prefix)
+        if prefixNode:
+            print('\n'.join(prefixNode.suffixes()))
+        else:
+            print(prefix + " not found")
+    else:
+        print('')
+interact(f,prefix='@');

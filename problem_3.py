@@ -41,6 +41,15 @@ def rearrange_digits(input_list):
     Returns:
        (int),(int): Two maximum sums
     """
+    #Referencing the assumption that input list only has array elements ranging from 0 to 9,
+    #any inputs larger than this, will consequently raise a ValueError.
+    try:
+        for  el in input_list:
+            if (el > 9):
+                raise ValueError
+    except ValueError:
+        print("Input list should only have numbers ranging from 0 to 9. Try again!")
+        return False
 
     input_len = len(input_list)
     sorted_list = merge_sort(input_list)
@@ -75,16 +84,22 @@ def rearrange_digits(input_list):
 
 def test_function(test_case):
     output = rearrange_digits(test_case[0])
-    solution = test_case[1]
-    if sum(output) == sum(solution):
-        print("Pass")
-    else:
-        print("Fail")
+    if (output):
+        solution = test_case[1]
+        if sum(output) == sum(solution):
+            print("Pass")
+        else:
+            print("Fail")
 
 test_function([[1, 2, 3, 4, 5], [542, 31]])
 test_case = [[4, 6, 2, 5, 9, 8], [964, 852]]
 test_function(test_case)
 test_case = [[0,0,1,1,2],[210, 10]]
 test_function(test_case)
+
+#edge case 1
 test_case = [[0,0],[0,0]]
 test_function(test_case)
+
+#edge case 2: large set and large numbers
+test_function([[i for i in range(0,21)], [int("".join(map(str,range(20,-1,-2)))), int("".join(map(str,range(19,-1,-2))))]])

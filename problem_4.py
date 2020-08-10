@@ -33,3 +33,10 @@ test_function([0,2,1,1,2,0,0])
 test_function([1,0])
 test_function([2,1])
 test_function([1,1,1])
+
+#edge case 1
+test_function([])
+
+#edge case 2: a large reversed sorted list
+test_list=[2]*100+[1]*120+[0]*200
+test_function(test_list)

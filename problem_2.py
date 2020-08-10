@@ -20,7 +20,7 @@ def get_pivot(input_list, first_index, last_index):
         return mid
     if (first_index < mid and input_list[mid] < input_list[mid - 1]):
         return (mid - 1)
-    if (input_list[start_index] >= input_list[mid]):
+    if (input_list[first_index] >= input_list[mid]):
         return get_pivot(input_list,first_index, mid - 1)
     return get_pivot(input_list, mid + 1, last_index)
 
@@ -90,3 +90,10 @@ test_function([[6, 7, 8, 9, 10, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 8])
 test_function([[6, 7, 8, 1, 2, 3, 4], 1])
 test_function([[6, 7, 8, 1, 2, 3, 4], 10])
+
+#Edge Case 1
+test_list=[i for i in range (1011,10000)]+[i for i in range (0,1011)]
+test_function([test_list, 6])
+#egde test 3  large list with negative numbers
+test_list=[i for i in range (1011,10000)]+[i for i in range (-1000,1011)]
+test_function([test_list, -60])
