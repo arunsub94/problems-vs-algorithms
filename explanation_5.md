@@ -9,3 +9,5 @@ The time complexity of the find function is O(m*n), since we would be iterating 
 The time complexity of the suffix function is also O(m*n), since we could end up iterating through all nodes of Trie in the worst case, to find all suffixes from a particular node.
 
 Hence, the time complexity of the algorithm would be O(m*n).
+
+The space complexity of the Trie data structure is dependent on the count of each character (c) and average word length (w), and hence the space complexity would be O(c*w).

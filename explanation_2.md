@@ -20,3 +20,5 @@ Time complexity analysis
   -> binary_search function: The time complexity of binary search is O(log n).
 
   Hence, the time complexity of the algorithm is O(log n).
+
+Space complexity: Since the algorithm ultimately employs a binary search algorithm, the space complexity of the algorithm is O(1) or constant space complexity. 
