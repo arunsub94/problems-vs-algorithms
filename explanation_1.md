@@ -5,4 +5,4 @@ that resembles binary search. Since the algorithms reduces the size of the input
 by half during every iteration of the while loop, the time complexity of the code
 is indeed O(log n).
 
-The space complexity of the algorithm is O(1).
+The space complexity of the binary search algorithm is O(1).

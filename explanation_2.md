@@ -21,4 +21,5 @@ Time complexity analysis
 
   Hence, the time complexity of the algorithm is O(log n).
 
-Space complexity: Since the algorithm ultimately employs a binary search algorithm, the space complexity of the algorithm is O(1) or constant space complexity. 
+Space complexity: Since the algorithm is recursive, the space complexity is proportional to the maximum depth of the generated recursion tree. This means that the space complexity would be space complexity of one function call (say O(m))
+times the max depth of recursion tree (n) and this would yield a space complexity of O(m * n). In our case, binary search is a O(1) algorithm, and depth of the binary search tree is O(log n). Hence, the space complexity of this algorithm is O(log n).

@@ -43,3 +43,7 @@ print ("Pass" if ((None, None) == get_min_max(l2)) else "Fail")
 l3 = [ _ for _ in range(1, 200001)]
 random.shuffle(l3)
 print ("Pass" if ((1, 200000) == get_min_max(l3)) else "Fail")
+
+#Edge Case 3: Single input
+l3 = [9]
+print ("Pass" if ((9, 9) == get_min_max(l3)) else "Fail")

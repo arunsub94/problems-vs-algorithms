@@ -44,11 +44,15 @@ def rearrange_digits(input_list):
     #Referencing the assumption that input list only has array elements ranging from 0 to 9,
     #any inputs larger than this, will consequently raise a ValueError.
     try:
+        #handling single inputs
+        if (len(input_list) < 2):
+            raise ValueError
+        #handling very large numbers
         for  el in input_list:
             if (el > 9):
                 raise ValueError
     except ValueError:
-        print("Input list should only have numbers ranging from 0 to 9. Try again!")
+        print("Input list should have atleast two numbers in the range from 0 to 9. Try again!")
         return False
 
     input_len = len(input_list)
@@ -83,6 +87,7 @@ def rearrange_digits(input_list):
     pass
 
 def test_function(test_case):
+
     output = rearrange_digits(test_case[0])
     if (output):
         solution = test_case[1]
@@ -103,3 +108,9 @@ test_function(test_case)
 
 #edge case 2: large set and large numbers
 test_function([[i for i in range(0,21)], [int("".join(map(str,range(20,-1,-2)))), int("".join(map(str,range(19,-1,-2))))]])
+
+#edge case 3: single input
+test_function([[1],[1]])
+
+#edge case 4
+test_function([[2,3],[3,2]])

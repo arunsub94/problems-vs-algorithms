@@ -1,4 +1,11 @@
 def sort_dutch(arr):
+    try:
+        for el in arr:
+            if (el not in [0,1,2]):
+                raise ValueError
+    except ValueError:
+        print("Sorry, input must contain only 0, 1 or 2")
+        return False
 
     #Two pointers for the next 0 position and 2 position
     pointer_0 = 0
@@ -23,7 +30,6 @@ def sort_dutch(arr):
 
 def test_function(test_case):
     dutch_array = sort_dutch(test_case)
-    print(dutch_array)
     if dutch_array == sorted(test_case):
         print("Pass")
     else:
@@ -40,3 +46,6 @@ test_function([])
 #edge case 2: a large reversed sorted list
 test_list=[2]*100+[1]*120+[0]*200
 test_function(test_list)
+
+#edge case 3: invalid input (other than 0,1 or 2)
+test_function([0,1,2,3])

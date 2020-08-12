@@ -11,6 +11,9 @@ def sqrt(number):
         if not type(number) is int:
             raise TypeError("Only integers are allowed")
 
+        if number < 0:
+            raise TypeError("No negative numbers allowed")
+
         start = 0
         end = number//2
 
@@ -46,3 +49,5 @@ print ("Pass" if  (None == sqrt(None)) else "Fail") #should raise exception
 print ("Pass" if  (0.07071 == sqrt(0.005)) else "Fail") #should raise exception
 #Edge Case 3
 print ("Pass" if  (100 == sqrt(10000)) else "Fail")
+#Edge case 4
+print ("Pass" if  (-1 == sqrt(-1)) else "Fail")

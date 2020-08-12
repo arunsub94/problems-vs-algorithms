@@ -7,4 +7,4 @@ Since the constraint is one of single traversal, we employ pointers to keep tabs
 the next 2 position and since we know that it's either 0, 1 or 2 in the array, the only other option left is 1.
 We fill the array up in this way using a while loop, making the time complexity of the algorithm O(n).
 
-Since this algorithm uses three pointers and loops through the input, it has O(n) space complexity. 
+Since this algorithm uses three pointers and loops through the input only once, it has O(1) space complexity.
